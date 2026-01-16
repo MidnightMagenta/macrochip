@@ -1,19 +1,22 @@
-find_package(OpenGL REQUIRED)
+find_package(Vulkan REQUIRED)
 
 add_library("macrochip-lib" STATIC
+    include/ecs_component.h
     include/ecs_core.h
-    include/ecs_components.h
-    include/mesh.h
-    include/mesh_primitives.h
+    include/term.h
+    include/utils.h
+    include/vulkan_context.h
+    include/window.h
 
     src/ecs_core.c
-    src/mesh_primitives.c
+    src/vulkan_context.c
+    src/window.c
 )
 
 target_include_directories("macrochip-lib" PUBLIC
     include
 )
 target_link_libraries("macrochip-lib" PUBLIC
-    OpenGL::GL
+    Vulkan::Vulkan
     submodules
 )
