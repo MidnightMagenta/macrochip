@@ -5,5 +5,6 @@ add_library(submodules INTERFACE)
 target_link_libraries(submodules INTERFACE
     glfw
     glad
+    cglm
 )
 
